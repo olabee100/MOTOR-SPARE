@@ -852,7 +852,7 @@ function renderDashboard(){
 
   const kpis = [
     {label:'Motors down right now', value: breakdownNow.length + outForRepair.length, cls: (breakdownNow.length+outForRepair.length)>0?'crit':'good', delta: motors.length+' motors total'},
-    {label:'Spare motors ready in store', value: spareMotorsReady.length, cls: spareMotorsReady.length>0?'good':'warn', delta: spareMotorsReady.length? spareMotorsReady.map(m=>m.tag).join(', ') : 'none on standby — nothing to swap in'},
+    {label:'Spare motors ready', value: spareMotorsReady.length, cls: spareMotorsReady.length>0?'good':'warn', delta: spareMotorsReady.length+' motors total'},
     {label:'Open breakdown tickets', value: openEvents.length, cls: openEvents.length>0?'warn':'good', delta: openEvents.filter(e=>e.urgency==='high').length+' marked high urgency'},
     {label:'Low stock spares', value: lowStock.length, cls: lowStock.length>0?'crit':'good', delta: spares.length+' part lines tracked'},
     {label:'Hours lost — open issues', value: Math.round(totalDowntimeOpen), cls:'info', delta:'running total, all open tickets'},
